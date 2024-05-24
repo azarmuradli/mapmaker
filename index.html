@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Mountain Grid</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h2 class="map-header">Potato Map</h2>
+            <div id="map">
+            </div>
+        </div>
+        <div  class="right-side-game-over">
+
+        </div>
+        <div class="right-side">
+            <div class="seasons-section">
+                <h1 class="game-over-text">Game Over!</h1>
+                <div id="seasons">
+                    <div class="season spring">
+                        <h4 class="season-name">Spring</h4>
+                        <h4 class="season-point"><span>0</span> points</h4>
+                    </div>
+                    <div class="season summer">
+                        <h4 class="season-name">Summer</h4>
+                        <h4 class="season-point"><span>0</span> points</h4>
+                    </div>
+                    <div class="season autumn">
+                        <h4 class="season-name">Autumn</h4>
+                        <h4 class="season-point"><span>0</span> points</h4>
+                    </div>
+                    <div class="season winter">
+                        <h4 class="season-name">Winter</h4>
+                        <h4 class="season-point"><span>0</span> points</h4>
+                    </div>
+                </div>
+                <h5 class="encircle-mountain-text">1 point added for encircling all mountains!</h5>
+                <h4 class="seasons-points">Total : <span>0</span> points</h4>
+            </div>
+
+            <div class="current-season">
+                <h4>Current Season : <span>Summer</span> (BC)</h4>
+            </div>
+            <div class="missions">
+                <div class="mission active">
+                    <div class="type">A</div>
+                    <div class="points">(<span>0</span> points)</div>
+                    <img src="assets//missions_eng/Group 68.png" alt="">
+                </div>
+                <div class="mission active">
+                    <div class="type">B</div>
+                    <div class="points">(<span>0</span> points)</div>
+                    <img src="assets//missions_eng/Group 69.png" alt="">
+                </div>
+                <div class="mission">
+                    <div class="type">C</div>
+                    <div class="points">(<span>0</span> points)</div>
+                    <img src="assets//missions_eng/Group 70.png" alt="">
+                </div>
+                <div class="mission">
+                    <div class="type">D</div>
+                    <div class="points">(<span>0</span> points)</div>
+                    <img src="assets//missions_eng/Group 71.png" alt="">
+                </div>
+            </div>
+            <div class="elapsed-time">
+                <h4>Elapsed time in current season : <span>0</span>/7</h4>
+            </div>
+
+            <div class="elements">
+                <div class="left">
+                    <h4>Current Elements:</h4>
+                    <div class="buttons">
+                      <button class="rotate">Rotate</button>
+                      <button class="flip">Flip</button>
+                    </div>
+
+                </div>
+                <div class="grid" draggable="true">
+                    <div class="time">
+                       <span>2</span> <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="cell element"  ></div>
+                    <div class="cell element" ></div>
+                    <div class="cell element" ></div>
+                    <div class="cell element"></div>
+                    <div class="cell element" ></div>
+                    <div class="cell element" ></div>
+                    <div class="cell element" ></div>
+                    <div class="cell element" ></div>
+                    <div class="cell element" ></div>
+                </div>
+               
+            </div>
+        </div>
+      </div>
+    
+    <script src="js/util.js"></script>
+    <script src="js/missions.js"></script>
+    <script src ="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

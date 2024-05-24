@@ -1,0 +1,320 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+body::before {
+    content: "";
+    background-image: url('../assets/theme.png'); /* Replace 'your-image.jpg' with your image file path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px); /* Adjust the blur value as needed */
+    z-index: -1;
+    opacity: 0.5;
+}
+h4 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%; /* This ensures the container takes up the full width of the viewport. */
+}
+  
+.left-side, .right-side {
+    flex: 1 1 45%; /* This makes both sides take an equal amount of space and wrap if needed */
+    padding: 20px; /* Add padding to create some spacing between the sides. */
+}
+.right-side-game-over {
+    display: none;
+}
+
+.map-header {
+    font-size: 2rem;
+}
+
+#map {
+    background-color: white;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    gap: 3px; /* Gap between cells for better visualization */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.cell {
+    width: 100%; /* Make cells flexible */
+    height: 0;
+    padding-bottom: 100%; /* Keep cells square */
+    background-color: #EFE2B3; /* Default empty cell background color */
+    border: 1px solid #EFE2B3; /* Border for individual cells */
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.mountain, .forest, .farm, .town, .water {
+    background-size: cover; /* Adjust as needed */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+}
+
+.mountain {
+    background-image: url('../assets/tiles/mountain_tile.png');
+}
+.forest {
+    background-image: url('../assets/tiles/forest_tile.png');
+}
+.farm {
+    background-image: url('../assets/tiles/plains_tile.png');
+}
+.town {
+    background-image: url('../assets/tiles/village_tile.png');
+}
+.water {
+    background-image: url('../assets/tiles/water_tile.png');
+}
+.invalid {
+    outline: 3px solid #FF0000; /* Outline for invalid cells */
+    opacity: 0.5;
+    background-color: #E9BD90;
+}
+
+.seasons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex: 1;
+}
+  
+#seasons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-align: center; /* Center text within the grid cells */
+}
+  
+.season {
+    width: 100px;
+    height: 60px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+}
+  
+.seasons-points {
+    text-align: center; /* Center the text within .seasons-points */
+    margin-top: 20px;
+}
+  
+.spring {
+    background-color: #69BE6C;
+    border: 2px solid #3C8F3F;
+}
+.summer {
+    background-color: #FEE874;
+    border: 2px solid #DDBB08;
+}
+.autumn {
+    background-color: #EABD94;
+    border: 2px solid #6C3F14;
+}
+.winter {
+    background-color: #59D2EC;
+    border: 2px solid #76ABB0;
+}
+
+.season-name {
+    text-align: center;
+}
+.season-point {
+    text-align: center;
+}
+.current-season::after {
+    margin-bottom: 10px;
+}
+.current-season::after, .elapsed-time::after {
+    content: "";
+    display: block;
+    height: 1px; /* Set the height or thickness of the line */
+    background-color: black; /* Set the line color */
+    margin-top: 10px; 
+}
+
+.missions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3px; /* Gap between cells for better visualization */
+    margin-bottom: 10px;
+}
+.mission {
+    height: 100px;
+    position: relative;
+}
+
+.mission img {
+    width: 100%;
+    height: 100%;
+}
+.type {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    color: white;
+}
+.points {
+    position: absolute;
+    bottom: 5px;
+    left: 45%;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.active .type::before {
+    content: "";
+    display: block;
+    width: 10px; 
+    height: 10px; 
+    background-color: #D0E578; 
+    border-radius: 50%; 
+    position: absolute;
+    left: 0;
+    top: 50%; 
+    transform: translateX(-150%) translateY(-50%); 
+}
+
+.elements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px; /* Gap between cells for better visualization */
+    margin-bottom: 10px;
+}
+
+.grid {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3px; /* Gap between cells for better visualization */
+    margin-top: 10px;
+    width: 55%;
+    padding: 30px 40px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.element {
+    text-align: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.left {
+    height: 200px;
+    position: relative;
+}
+  
+.left h4 {
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+}
+  
+.buttons {
+    position: absolute;
+    bottom: 0px; 
+    right: 10px; 
+}
+  
+.buttons button {
+    display: block;
+    margin-top: 5px;
+    width: 120px;
+    height: 50px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: white;
+}
+
+.time {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+  
+.start-new-game-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.start-new-game-button button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-new-game-button button:hover {
+    background-color: #2980b9;
+}
+
+.right-side .game-over-text {
+    display: none;
+}
+.right-side-game-over .game-over-text {
+    display: block;
+}
+.seasons-section .encircle-mountain-text {
+    display: none;
+}
+.encircled .encircle-mountain-text {
+    display: block;
+}
+.encircle-mountain-text {
+    margin: 0;
+    margin-top: 10px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .grid {
+        width: 80%;
+    }
+}
